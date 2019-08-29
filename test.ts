@@ -22,6 +22,17 @@ export class Widget extends Loadable.Widget {
 
         this._bindDescendants();
     }
+    
+     private setAndResizeVideoPlayerContent = (videoPlayer: HTMLDivElement) => {
+        if (videoPlayer) {
+            videoPlayer.innerHTML = this.props.videoPlayerHtml;
+            let iframes = videoPlayer.querySelectorAll('iframe');
+            if (iframes && iframes.length === 1) {
+                iframes[0].setAttribute('width', '800px');
+                iframes[0].setAttribute('height', '530px');
+            }
+        }
+    };
 
     /**
      * See parent.
