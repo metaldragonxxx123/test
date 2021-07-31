@@ -5,6 +5,9 @@ on:
     types: [created]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    run: echo test
   launchBackportBuild:
     runs-on: ubuntu-latest
     if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '@vs-mobiletools-engineering-service2 backport')
