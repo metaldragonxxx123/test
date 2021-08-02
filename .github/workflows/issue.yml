@@ -12,6 +12,7 @@ jobs:
     - name: See event name
       run: |
         echo "path: {{ $GITHUB_EVENT_PATH }}"
+        cat {{ $GITHUB_EVENT_PATH }}
         echo "title ${title}"
         echo "actor ${actor}"
         echo "event_name ${event_name}"
