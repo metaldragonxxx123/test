@@ -13,6 +13,7 @@ jobs:
       run: |
         echo "path: {{ $GITHUB_EVENT_PATH }}"
         cat {{ $GITHUB_EVENT_PATH }}
+        echo "{{ github.context.payload.head_commit.title }}"
         echo "title ${title}"
         echo "actor ${actor}"
         echo "event_name ${event_name}"
