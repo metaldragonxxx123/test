@@ -1,0 +1,15 @@
+name: Có người mở Issue!
+on:
+  issues:
+    types: [opened]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Có người mở issue nè cha"}' $YOUR_WEBHOOK_URL
+        env:
+          YOUR_WEBHOOK_URL: ${{ secrets.YOUR_WEBHOOK_URL }}
+          
